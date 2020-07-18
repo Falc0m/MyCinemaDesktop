@@ -1,4 +1,4 @@
-﻿namespace MyCinema
+﻿namespace MyCinema2
 {
     partial class Form1
     {
@@ -22,13 +22,13 @@
 
 
         private System.Windows.Forms.Panel sidePanel;
-        private System.Windows.Forms.Panel topPanel;
-        private System.Windows.Forms.Label topPanel_appTitle;
         private System.Windows.Forms.Button sidePanel_addMovieBtn;
         private System.Windows.Forms.Button sidePanel_viewMoviesBtn;
         private System.Windows.Forms.Panel sidePanel_logo;
         private System.Windows.Forms.Button sidePanel_aboutUsBtn;
         private System.Windows.Forms.Button sidePanel_viewOnline;
+        private System.Windows.Forms.Panel mainPanel;
+        private System.Windows.Forms.Label app_title;
     }
 }
 
