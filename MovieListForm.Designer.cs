@@ -54,12 +54,12 @@ namespace MyCinema
             // 
             // topPanel_title
             // 
-            this.topPanel_title.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.topPanel_title.AutoSize = true;
+            this.topPanel_title.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.topPanel_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.topPanel_title.ForeColor = System.Drawing.Color.White;
-            this.topPanel_title.Location = new System.Drawing.Point(297, 11);
+            this.topPanel_title.Location = new System.Drawing.Point(0, 0);
             this.topPanel_title.Name = "topPanel_title";
-            this.topPanel_title.Size = new System.Drawing.Size(51, 13);
+            this.topPanel_title.Size = new System.Drawing.Size(615, 35);
             this.topPanel_title.TabIndex = 0;
             this.topPanel_title.Text = "Movie list";
             this.topPanel_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -129,7 +129,6 @@ namespace MyCinema
             this.Name = "Form2";
             this.Text = "My Cinema";
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
 

@@ -24,6 +24,7 @@ namespace MyCinema
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.sidePanel = new System.Windows.Forms.Panel();
             this.sidePanel_aboutUsBtn = new System.Windows.Forms.Button();
             this.sidePanel_viewOnline = new System.Windows.Forms.Button();
@@ -32,8 +33,10 @@ namespace MyCinema
             this.sidePanel_logo = new System.Windows.Forms.Panel();
             this.app_title = new System.Windows.Forms.Label();
             this.mainPanel = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.sidePanel.SuspendLayout();
             this.sidePanel_logo.SuspendLayout();
+            this.mainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // sidePanel
@@ -57,6 +60,7 @@ namespace MyCinema
             this.sidePanel_aboutUsBtn.Dock = System.Windows.Forms.DockStyle.Top;
             this.sidePanel_aboutUsBtn.FlatAppearance.BorderSize = 0;
             this.sidePanel_aboutUsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sidePanel_aboutUsBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sidePanel_aboutUsBtn.ForeColor = System.Drawing.Color.LightGray;
             this.sidePanel_aboutUsBtn.Location = new System.Drawing.Point(0, 220);
             this.sidePanel_aboutUsBtn.Name = "sidePanel_aboutUsBtn";
@@ -73,6 +77,7 @@ namespace MyCinema
             this.sidePanel_viewOnline.Dock = System.Windows.Forms.DockStyle.Top;
             this.sidePanel_viewOnline.FlatAppearance.BorderSize = 0;
             this.sidePanel_viewOnline.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sidePanel_viewOnline.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sidePanel_viewOnline.ForeColor = System.Drawing.Color.LightGray;
             this.sidePanel_viewOnline.Location = new System.Drawing.Point(0, 180);
             this.sidePanel_viewOnline.Name = "sidePanel_viewOnline";
@@ -89,6 +94,7 @@ namespace MyCinema
             this.sidePanel_addMovieBtn.Dock = System.Windows.Forms.DockStyle.Top;
             this.sidePanel_addMovieBtn.FlatAppearance.BorderSize = 0;
             this.sidePanel_addMovieBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sidePanel_addMovieBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sidePanel_addMovieBtn.ForeColor = System.Drawing.Color.LightGray;
             this.sidePanel_addMovieBtn.Location = new System.Drawing.Point(0, 140);
             this.sidePanel_addMovieBtn.Name = "sidePanel_addMovieBtn";
@@ -105,6 +111,7 @@ namespace MyCinema
             this.sidePanel_viewMoviesBtn.Dock = System.Windows.Forms.DockStyle.Top;
             this.sidePanel_viewMoviesBtn.FlatAppearance.BorderSize = 0;
             this.sidePanel_viewMoviesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sidePanel_viewMoviesBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sidePanel_viewMoviesBtn.ForeColor = System.Drawing.Color.LightGray;
             this.sidePanel_viewMoviesBtn.Location = new System.Drawing.Point(0, 100);
             this.sidePanel_viewMoviesBtn.Name = "sidePanel_viewMoviesBtn";
@@ -128,6 +135,7 @@ namespace MyCinema
             // app_title
             // 
             this.app_title.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.app_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.app_title.Location = new System.Drawing.Point(0, 0);
             this.app_title.Name = "app_title";
             this.app_title.Size = new System.Drawing.Size(200, 100);
@@ -138,11 +146,23 @@ namespace MyCinema
             // mainPanel
             // 
             this.mainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.mainPanel.Controls.Add(this.label1);
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPanel.Location = new System.Drawing.Point(200, 0);
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(734, 561);
             this.mainPanel.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(130, 255);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(457, 168);
+            this.label1.TabIndex = 0;
+            this.label1.Text = resources.GetString("label1.Text");
             // 
             // Form1
             // 
@@ -153,6 +173,8 @@ namespace MyCinema
             this.Text = "My Cinema";
             this.sidePanel.ResumeLayout(false);
             this.sidePanel_logo.ResumeLayout(false);
+            this.mainPanel.ResumeLayout(false);
+            this.mainPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }

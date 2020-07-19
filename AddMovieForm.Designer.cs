@@ -49,6 +49,7 @@
             // 
             this.addMovie_label.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.addMovie_label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.addMovie_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addMovie_label.ForeColor = System.Drawing.Color.White;
             this.addMovie_label.Location = new System.Drawing.Point(0, 0);
             this.addMovie_label.Name = "addMovie_label";

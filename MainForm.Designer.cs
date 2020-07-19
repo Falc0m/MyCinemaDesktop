@@ -29,6 +29,7 @@
         private System.Windows.Forms.Button sidePanel_viewOnline;
         private System.Windows.Forms.Panel mainPanel;
         private System.Windows.Forms.Label app_title;
+        private System.Windows.Forms.Label label1;
     }
 }
 

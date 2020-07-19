@@ -117,4 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label1.Text" xml:space="preserve">
+    <value>This is my project for Programming written in .NET C#
+The project name is My Cinema and it can:
+Add/Edit/Remove watched movies
+View list of watched movies
+View details of specific watched movie
+View specific movie in my web-app
+View web form of the app</value>
+  </data>
 </root>
