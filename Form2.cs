@@ -18,7 +18,6 @@ namespace MyCinema
         private static IMongoCollection<Movie> collection = db.GetCollection<Movie>("movies");
         private List<Movie> movieList;
         private Panel MainPanel;
-        private Form activeForm;
 
 
         private void ReadAllDocuments()
@@ -27,10 +26,9 @@ namespace MyCinema
             dataGridView.DataSource = movieList;
         }
 
-        public Form2(Panel panel, Form activeForm)
+        public Form2(Panel panel)
         {
             this.MainPanel = panel;
-            this.activeForm = activeForm;
             InitializeComponent();
             ReadAllDocuments();
         }

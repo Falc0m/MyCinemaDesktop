@@ -154,7 +154,7 @@ namespace MyCinema
 
         private void sidePanel_viewMoviesBtn_Click(object sender, EventArgs e)
         {
-            setMainForm(new Form2(mainPanel,activeForm));
+            setMainForm(new Form2(mainPanel));
         }
 
         public void setMainForm(Form passedForm)
