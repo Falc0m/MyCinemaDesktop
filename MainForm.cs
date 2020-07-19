@@ -34,6 +34,7 @@ namespace MyCinema
             this.app_title = new System.Windows.Forms.Label();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.sidePanel_exitApp = new System.Windows.Forms.Button();
             this.sidePanel.SuspendLayout();
             this.sidePanel_logo.SuspendLayout();
             this.mainPanel.SuspendLayout();
@@ -43,6 +44,7 @@ namespace MyCinema
             // 
             this.sidePanel.AutoScroll = true;
             this.sidePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.sidePanel.Controls.Add(this.sidePanel_exitApp);
             this.sidePanel.Controls.Add(this.sidePanel_aboutUsBtn);
             this.sidePanel.Controls.Add(this.sidePanel_viewOnline);
             this.sidePanel.Controls.Add(this.sidePanel_addMovieBtn);
@@ -164,6 +166,21 @@ namespace MyCinema
             this.label1.TabIndex = 0;
             this.label1.Text = resources.GetString("label1.Text");
             // 
+            // sidePanel_exitApp
+            // 
+            this.sidePanel_exitApp.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.sidePanel_exitApp.FlatAppearance.BorderSize = 0;
+            this.sidePanel_exitApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sidePanel_exitApp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sidePanel_exitApp.ForeColor = System.Drawing.Color.White;
+            this.sidePanel_exitApp.Location = new System.Drawing.Point(0, 521);
+            this.sidePanel_exitApp.Name = "sidePanel_exitApp";
+            this.sidePanel_exitApp.Size = new System.Drawing.Size(200, 40);
+            this.sidePanel_exitApp.TabIndex = 7;
+            this.sidePanel_exitApp.Text = "Exit";
+            this.sidePanel_exitApp.UseVisualStyleBackColor = true;
+            this.sidePanel_exitApp.Click += new System.EventHandler(this.sidePanel_exitApp_Click);
+            // 
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(934, 561);
@@ -182,6 +199,7 @@ namespace MyCinema
         private void sidePanel_viewMoviesBtn_Click(object sender, EventArgs e)
         {
             setMainForm(new Form2(mainPanel));
+            setActiveButton(Utils.ButtonNames.ViewMovies);
         }
 
         public void setMainForm(Form passedForm)
@@ -201,6 +219,7 @@ namespace MyCinema
             mainPanel.Controls.Add(passedForm);
             mainPanel.Tag = passedForm;
 
+            passedForm.BringToFront();
             passedForm.Show();
 
         }
@@ -208,6 +227,8 @@ namespace MyCinema
         private void sidePanel_addMovieBtn_Click(object sender, EventArgs e)
         {
             setMainForm(new AddMovieForm());
+            setActiveButton(Utils.ButtonNames.AddMovies);
+
         }
 
         private void sidePanel_viewOnline_Click(object sender, EventArgs e)
@@ -218,6 +239,41 @@ namespace MyCinema
         private void sidePanel_aboutUsBtn_Click(object sender, EventArgs e)
         {
             setMainForm(new AboutUsForm());
+            setActiveButton(Utils.ButtonNames.AboutUs);
+        }
+
+
+        private void setActiveButton(Utils.ButtonNames buttonName)
+        {
+
+            sidePanel_viewMoviesBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            sidePanel_viewOnline.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            sidePanel_addMovieBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            sidePanel_aboutUsBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+
+            switch (buttonName)
+            {
+
+                //23, 21, 32
+                case Utils.ButtonNames.ViewMovies:
+                    sidePanel_viewMoviesBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+                    break;
+
+                case Utils.ButtonNames.AddMovies:
+                    sidePanel_addMovieBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+
+                    break;
+
+                case Utils.ButtonNames.AboutUs:
+                    sidePanel_aboutUsBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+                    break;
+
+            }
+        }
+
+        private void sidePanel_exitApp_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
