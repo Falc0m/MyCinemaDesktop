@@ -47,6 +47,7 @@
             // 
             // addMovie_label
             // 
+            this.addMovie_label.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.addMovie_label.Dock = System.Windows.Forms.DockStyle.Fill;
             this.addMovie_label.ForeColor = System.Drawing.Color.White;
             this.addMovie_label.Location = new System.Drawing.Point(0, 0);
@@ -82,7 +83,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "AddMovieForm";
-            this.Text = "AddMovieForm";
+            this.Text = "My Cinema";
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);

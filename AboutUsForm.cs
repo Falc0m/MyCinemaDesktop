@@ -1,5 +1,4 @@
-﻿using MyCinema;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,18 +10,10 @@ using System.Windows.Forms;
 
 namespace MyCinema2
 {
-    public partial class AddMovieForm : Form
+    public partial class AboutUsForm : Form
     {
-        private Movie movie;
-        public AddMovieForm()
+        public AboutUsForm()
         {
-            InitializeComponent();
-        }
-
-
-        public AddMovieForm(Movie movie)
-        {
-            this.movie = movie;
             InitializeComponent();
         }
     }

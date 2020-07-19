@@ -1,7 +1,9 @@
-﻿using System;
+﻿using MyCinema2;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -64,6 +66,7 @@ namespace MyCinema
             this.sidePanel_aboutUsBtn.Text = "About Us";
             this.sidePanel_aboutUsBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.sidePanel_aboutUsBtn.UseVisualStyleBackColor = true;
+            this.sidePanel_aboutUsBtn.Click += new System.EventHandler(this.sidePanel_aboutUsBtn_Click);
             // 
             // sidePanel_viewOnline
             // 
@@ -79,6 +82,7 @@ namespace MyCinema
             this.sidePanel_viewOnline.Text = "View Online";
             this.sidePanel_viewOnline.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.sidePanel_viewOnline.UseVisualStyleBackColor = true;
+            this.sidePanel_viewOnline.Click += new System.EventHandler(this.sidePanel_viewOnline_Click);
             // 
             // sidePanel_addMovieBtn
             // 
@@ -181,7 +185,17 @@ namespace MyCinema
 
         private void sidePanel_addMovieBtn_Click(object sender, EventArgs e)
         {
+            setMainForm(new AddMovieForm());
+        }
 
+        private void sidePanel_viewOnline_Click(object sender, EventArgs e)
+        {
+            Process.Start("http://13.53.159.1:8080");
+        }
+
+        private void sidePanel_aboutUsBtn_Click(object sender, EventArgs e)
+        {
+            setMainForm(new AboutUsForm());
         }
     }
 }
