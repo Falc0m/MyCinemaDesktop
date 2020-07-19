@@ -9,25 +9,28 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MyCinema2
+namespace MyCinema
 {
     public partial class Form2 : Form
     {
-        System.Windows.Forms.Panel MainPanel;
-        static MongoClient mongoClient = new MongoClient("mongodb://W60113:asd123@13.53.159.1:27017");
-        static IMongoDatabase db = mongoClient.GetDatabase("my_cinema");
-        static IMongoCollection<Movie> collection = db.GetCollection<Movie>("movies");
+        private static MongoClient mongoClient = new MongoClient("mongodb://W60113:asd123@13.53.159.1:27017");
+        private static IMongoDatabase db = mongoClient.GetDatabase("my_cinema");
+        private static IMongoCollection<Movie> collection = db.GetCollection<Movie>("movies");
+        private List<Movie> movieList;
+        private Panel MainPanel;
+        private Form activeForm;
 
 
         private void ReadAllDocuments()
         {
-            List<Movie> list = collection.AsQueryable().ToList<Movie>();
-            dataGridView.DataSource = list;
+            movieList = collection.AsQueryable().ToList<Movie>();
+            dataGridView.DataSource = movieList;
         }
 
-        public Form2(System.Windows.Forms.Panel panel)
+        public Form2(Panel panel, Form activeForm)
         {
             this.MainPanel = panel;
+            this.activeForm = activeForm;
             InitializeComponent();
             ReadAllDocuments();
         }
@@ -37,7 +40,19 @@ namespace MyCinema2
             
             string id = dataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
 
-            setMainForm(new Form3(id));
+            Movie movie = movieList.Find(m => m.Id.ToString().Equals(id));
+
+            if (movie != null)
+            {
+                Console.WriteLine("Found Movie, redirecting");
+                setMainForm(new Form3(movie));
+            }
+            else
+            {
+                Console.WriteLine("Something went wrong");
+            }
+
+            
             
         }
 
@@ -45,6 +60,8 @@ namespace MyCinema2
         private void setMainForm(Form passedForm)
         {
 
+            this.Close();
+            Form1.activeForm = passedForm;
 
             passedForm.TopLevel = false;
             passedForm.FormBorderStyle = FormBorderStyle.None;

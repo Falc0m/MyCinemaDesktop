@@ -8,10 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MyCinema2
+namespace MyCinema
 {
     public partial class Form1 : Form
     {
+
+        public static Form activeForm = null;
+
         public Form1()
         {
             InitializeComponent();
@@ -151,10 +154,9 @@ namespace MyCinema2
 
         private void sidePanel_viewMoviesBtn_Click(object sender, EventArgs e)
         {
-            setMainForm(new Form2(mainPanel));
+            setMainForm(new Form2(mainPanel,activeForm));
         }
 
-        private Form activeForm = null;
         public void setMainForm(Form passedForm)
         {
 

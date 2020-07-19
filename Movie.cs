@@ -6,11 +6,23 @@ using System.Threading.Tasks;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace MyCinema2
+namespace MyCinema
 {
     [BsonIgnoreExtraElements]
-    class Movie
+    public class Movie
     {
+        public Movie(string title, string category, int rating, string description)
+        {
+            Title = title;
+            Category = category;
+            Rating = rating;
+            Description = description;
+        }
+
+        public Movie()
+        {
+        }
+
         [BsonId]
         public Object Id { get; set; }
 

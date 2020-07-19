@@ -8,13 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MyCinema2
+namespace MyCinema
 {
     public partial class Form3 : Form
     {
-        public Form3(String id)
+        private Movie movie;
+        public Form3(Movie movie)
         {
-            Console.WriteLine("PASSED ID " + id);
+            this.movie = movie;
             InitializeComponent();
         }
     }

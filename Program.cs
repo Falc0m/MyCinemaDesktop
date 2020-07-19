@@ -8,7 +8,7 @@ using System.Windows.Forms;
 // mongo database: "my_cinema"
 // mongo collection: "movies"
 
-namespace MyCinema2
+namespace MyCinema
 {
     static class Program
     {

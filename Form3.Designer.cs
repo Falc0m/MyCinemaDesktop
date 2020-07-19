@@ -1,4 +1,4 @@
-﻿namespace MyCinema2
+﻿namespace MyCinema
 {
     partial class Form3
     {
@@ -19,6 +19,7 @@
             }
             base.Dispose(disposing);
         }
+
 
         #region Windows Form Designer generated code
 
@@ -51,7 +52,8 @@
             this.movieView_topPanel_title.Name = "movieView_topPanel_title";
             this.movieView_topPanel_title.Size = new System.Drawing.Size(615, 35);
             this.movieView_topPanel_title.TabIndex = 0;
-            this.movieView_topPanel_title.Text = "title";
+            //this.movieView_topPanel_title.Text = "title";
+            this.movieView_topPanel_title.Text = movie.Title;
             this.movieView_topPanel_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form3
@@ -62,7 +64,7 @@
             this.ClientSize = new System.Drawing.Size(615, 400);
             this.Controls.Add(this.panel1);
             this.Name = "Form3";
-            this.Text = "Form3";
+            this.Text = "My Cinema";
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
