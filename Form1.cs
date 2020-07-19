@@ -94,6 +94,7 @@ namespace MyCinema
             this.sidePanel_addMovieBtn.Text = "Add Movie";
             this.sidePanel_addMovieBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.sidePanel_addMovieBtn.UseVisualStyleBackColor = true;
+            this.sidePanel_addMovieBtn.Click += new System.EventHandler(this.sidePanel_addMovieBtn_Click);
             // 
             // sidePanel_viewMoviesBtn
             // 
@@ -178,6 +179,9 @@ namespace MyCinema
 
         }
 
+        private void sidePanel_addMovieBtn_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

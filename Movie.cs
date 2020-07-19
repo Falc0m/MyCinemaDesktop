@@ -38,6 +38,12 @@ namespace MyCinema
         [BsonElement("description")]
         public String Description { get; set; }
 
-   
+
+        [BsonDateTimeOptions(Kind = DateTimeKind.Local)]
+        [BsonElement("dateAdded")]
+        public DateTime DateAdded
+        { get; set; }
+
+
     }
 }

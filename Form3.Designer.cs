@@ -31,7 +31,7 @@ namespace MyCinema
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.movieView_topPanel_title = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -39,10 +39,9 @@ namespace MyCinema
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.viewItem_removeBtn = new System.Windows.Forms.Button();
+            this.viewItem_editBtn = new System.Windows.Forms.Button();
+            this.viewItem_viewOnlineBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -73,6 +72,7 @@ namespace MyCinema
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -81,9 +81,9 @@ namespace MyCinema
             this.dataGridView1.Location = new System.Drawing.Point(0, 35);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.Size = new System.Drawing.Size(615, 365);
             this.dataGridView1.TabIndex = 1;
@@ -105,10 +105,9 @@ namespace MyCinema
             // panel2
             // 
             this.panel2.Controls.Add(this.button5);
-            this.panel2.Controls.Add(this.button4);
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.viewItem_removeBtn);
+            this.panel2.Controls.Add(this.viewItem_editBtn);
+            this.panel2.Controls.Add(this.viewItem_viewOnlineBtn);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 350);
             this.panel2.Name = "panel2";
@@ -125,45 +124,38 @@ namespace MyCinema
             this.button5.Text = "button1";
             this.button5.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // viewItem_removeBtn
             // 
-            this.button4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button4.Location = new System.Drawing.Point(345, 15);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 0;
-            this.button4.Text = "button1";
-            this.button4.UseVisualStyleBackColor = true;
+            this.viewItem_removeBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.viewItem_removeBtn.Location = new System.Drawing.Point(323, 15);
+            this.viewItem_removeBtn.Name = "viewItem_removeBtn";
+            this.viewItem_removeBtn.Size = new System.Drawing.Size(75, 23);
+            this.viewItem_removeBtn.TabIndex = 0;
+            this.viewItem_removeBtn.Text = "Remove";
+            this.viewItem_removeBtn.UseVisualStyleBackColor = true;
+            this.viewItem_removeBtn.Click += new System.EventHandler(this.viewItem_removeBtn_Click);
             // 
-            // button3
+            // viewItem_editBtn
             // 
-            this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button3.Location = new System.Drawing.Point(264, 15);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "button1";
-            this.button3.UseVisualStyleBackColor = true;
+            this.viewItem_editBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.viewItem_editBtn.Location = new System.Drawing.Point(242, 15);
+            this.viewItem_editBtn.Name = "viewItem_editBtn";
+            this.viewItem_editBtn.Size = new System.Drawing.Size(75, 23);
+            this.viewItem_editBtn.TabIndex = 0;
+            this.viewItem_editBtn.Text = "Edit";
+            this.viewItem_editBtn.UseVisualStyleBackColor = true;
+            this.viewItem_editBtn.Click += new System.EventHandler(this.viewItem_editBtn_Click);
             // 
-            // button2
+            // viewItem_viewOnlineBtn
             // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button2.Location = new System.Drawing.Point(183, 15);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "button1";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.Location = new System.Drawing.Point(102, 15);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.viewItem_viewOnlineBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.viewItem_viewOnlineBtn.Location = new System.Drawing.Point(161, 15);
+            this.viewItem_viewOnlineBtn.Name = "viewItem_viewOnlineBtn";
+            this.viewItem_viewOnlineBtn.Size = new System.Drawing.Size(75, 23);
+            this.viewItem_viewOnlineBtn.TabIndex = 0;
+            this.viewItem_viewOnlineBtn.Text = "View online";
+            this.viewItem_viewOnlineBtn.UseVisualStyleBackColor = true;
+            this.viewItem_viewOnlineBtn.Click += new System.EventHandler(this.viewItem_viewOnlineBtn_Click);
             // 
             // Form3
             // 
@@ -192,9 +184,8 @@ namespace MyCinema
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button viewItem_removeBtn;
+        private System.Windows.Forms.Button viewItem_editBtn;
+        private System.Windows.Forms.Button viewItem_viewOnlineBtn;
     }
 }

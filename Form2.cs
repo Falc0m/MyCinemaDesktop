@@ -43,7 +43,7 @@ namespace MyCinema
             if (movie != null)
             {
                 Console.WriteLine("Found Movie, redirecting");
-                setMainForm(new Form3(movie));
+                setMainForm(new Form3(movie,MainPanel));
             }
             else
             {
