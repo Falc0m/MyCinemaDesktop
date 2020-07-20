@@ -31,14 +31,13 @@ namespace MyCinema
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.movieView_topPanel_title = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
             this.viewItem_removeBtn = new System.Windows.Forms.Button();
             this.viewItem_editBtn = new System.Windows.Forms.Button();
             this.viewItem_viewOnlineBtn = new System.Windows.Forms.Button();
@@ -82,9 +81,9 @@ namespace MyCinema
             this.dataGridView1.Location = new System.Drawing.Point(0, 35);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.Size = new System.Drawing.Size(615, 365);
             this.dataGridView1.TabIndex = 1;
@@ -105,7 +104,6 @@ namespace MyCinema
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.button5);
             this.panel2.Controls.Add(this.viewItem_removeBtn);
             this.panel2.Controls.Add(this.viewItem_editBtn);
             this.panel2.Controls.Add(this.viewItem_viewOnlineBtn);
@@ -115,20 +113,10 @@ namespace MyCinema
             this.panel2.Size = new System.Drawing.Size(615, 50);
             this.panel2.TabIndex = 2;
             // 
-            // button5
-            // 
-            this.button5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button5.Location = new System.Drawing.Point(426, 15);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 0;
-            this.button5.Text = "button1";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
             // viewItem_removeBtn
             // 
             this.viewItem_removeBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.viewItem_removeBtn.Location = new System.Drawing.Point(323, 15);
+            this.viewItem_removeBtn.Location = new System.Drawing.Point(337, 15);
             this.viewItem_removeBtn.Name = "viewItem_removeBtn";
             this.viewItem_removeBtn.Size = new System.Drawing.Size(75, 23);
             this.viewItem_removeBtn.TabIndex = 0;
@@ -139,7 +127,7 @@ namespace MyCinema
             // viewItem_editBtn
             // 
             this.viewItem_editBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.viewItem_editBtn.Location = new System.Drawing.Point(242, 15);
+            this.viewItem_editBtn.Location = new System.Drawing.Point(256, 15);
             this.viewItem_editBtn.Name = "viewItem_editBtn";
             this.viewItem_editBtn.Size = new System.Drawing.Size(75, 23);
             this.viewItem_editBtn.TabIndex = 0;
@@ -150,7 +138,7 @@ namespace MyCinema
             // viewItem_viewOnlineBtn
             // 
             this.viewItem_viewOnlineBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.viewItem_viewOnlineBtn.Location = new System.Drawing.Point(161, 15);
+            this.viewItem_viewOnlineBtn.Location = new System.Drawing.Point(175, 15);
             this.viewItem_viewOnlineBtn.Name = "viewItem_viewOnlineBtn";
             this.viewItem_viewOnlineBtn.Size = new System.Drawing.Size(75, 23);
             this.viewItem_viewOnlineBtn.TabIndex = 0;
@@ -184,7 +172,6 @@ namespace MyCinema
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button viewItem_removeBtn;
         private System.Windows.Forms.Button viewItem_editBtn;
         private System.Windows.Forms.Button viewItem_viewOnlineBtn;
