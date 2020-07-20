@@ -24,7 +24,20 @@ namespace MyCinema2
         public AddMovieForm(Movie movie)
         {
             passedMovie = movie;
-            InitializeComponent(passedMovie);
+            InitializeComponent();
+
+            PopulateForm();
+        }
+
+        private void PopulateForm()
+        {
+
+            addMovie_titleTxt.Text = passedMovie.Title;
+            addMovie_ratingCmbBox.Text = passedMovie.Rating.ToString();
+            addMovie_idTxt.Text = passedMovie.Id.ToString();
+            addMovie_descriptionTxt.Text = passedMovie.Description;
+            addMovie_datePicker.Value = passedMovie.PremiereDate;
+            addMovie_categoryCmbBox.Text = passedMovie.Category.ToString();
         }
 
         private void addMovie_submitBtn_Click(object sender, EventArgs e)
@@ -32,6 +45,33 @@ namespace MyCinema2
             MongoClient mongoClient = new MongoClient("mongodb://W60113:asd123@13.53.159.1:27017");
             IMongoDatabase db = mongoClient.GetDatabase("my_cinema");
             IMongoCollection<Movie> collection = db.GetCollection<Movie>("movies");
+
+
+            if (string.IsNullOrEmpty(addMovie_titleTxt.Text))
+            {
+                MessageBox.Show("Title cannot be empty");
+                return;
+            }
+            else if (string.IsNullOrEmpty(addMovie_categoryCmbBox.Text))
+            {
+                MessageBox.Show("Category cannot be empty");
+                return;
+            }
+            else if (string.IsNullOrEmpty(addMovie_ratingCmbBox.Text))
+            {
+                MessageBox.Show("Rating cannot be empty");
+                return;
+            }
+            else if (string.IsNullOrEmpty(addMovie_descriptionTxt.Text))
+            {
+                MessageBox.Show("Description cannot be empty");
+                return;
+            }
+            else if (string.IsNullOrEmpty(addMovie_datePicker.Value.ToString()))
+            {
+                MessageBox.Show("Date cannot be empty");
+                return;
+            }
 
             Movie movie = null;
 

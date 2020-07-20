@@ -31,16 +31,16 @@ namespace MyCinema
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.movieView_topPanel_title = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.viewItem_removeBtn = new System.Windows.Forms.Button();
             this.viewItem_editBtn = new System.Windows.Forms.Button();
             this.viewItem_viewOnlineBtn = new System.Windows.Forms.Button();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -53,7 +53,7 @@ namespace MyCinema
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(615, 35);
+            this.panel1.Size = new System.Drawing.Size(718, 35);
             this.panel1.TabIndex = 0;
             // 
             // movieView_topPanel_title
@@ -63,7 +63,8 @@ namespace MyCinema
             this.movieView_topPanel_title.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.movieView_topPanel_title.Location = new System.Drawing.Point(0, 0);
             this.movieView_topPanel_title.Name = "movieView_topPanel_title";
-            this.movieView_topPanel_title.Size = new System.Drawing.Size(615, 35);
+            this.movieView_topPanel_title.Text = movie.Title;
+            this.movieView_topPanel_title.Size = new System.Drawing.Size(718, 35);
             this.movieView_topPanel_title.TabIndex = 0;
             this.movieView_topPanel_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -71,36 +72,22 @@ namespace MyCinema
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 35);
+            this.dataGridView1.Location = new System.Drawing.Point(157, 116);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.Size = new System.Drawing.Size(615, 365);
+            this.dataGridView1.Size = new System.Drawing.Size(512, 308);
             this.dataGridView1.TabIndex = 1;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Field";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 150;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Value";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 500;
             // 
             // panel2
             // 
@@ -108,15 +95,15 @@ namespace MyCinema
             this.panel2.Controls.Add(this.viewItem_editBtn);
             this.panel2.Controls.Add(this.viewItem_viewOnlineBtn);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 350);
+            this.panel2.Location = new System.Drawing.Point(0, 472);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(615, 50);
+            this.panel2.Size = new System.Drawing.Size(718, 50);
             this.panel2.TabIndex = 2;
             // 
             // viewItem_removeBtn
             // 
             this.viewItem_removeBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.viewItem_removeBtn.Location = new System.Drawing.Point(337, 15);
+            this.viewItem_removeBtn.Location = new System.Drawing.Point(379, 15);
             this.viewItem_removeBtn.Name = "viewItem_removeBtn";
             this.viewItem_removeBtn.Size = new System.Drawing.Size(75, 23);
             this.viewItem_removeBtn.TabIndex = 0;
@@ -127,7 +114,7 @@ namespace MyCinema
             // viewItem_editBtn
             // 
             this.viewItem_editBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.viewItem_editBtn.Location = new System.Drawing.Point(256, 15);
+            this.viewItem_editBtn.Location = new System.Drawing.Point(298, 15);
             this.viewItem_editBtn.Name = "viewItem_editBtn";
             this.viewItem_editBtn.Size = new System.Drawing.Size(75, 23);
             this.viewItem_editBtn.TabIndex = 0;
@@ -138,7 +125,7 @@ namespace MyCinema
             // viewItem_viewOnlineBtn
             // 
             this.viewItem_viewOnlineBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.viewItem_viewOnlineBtn.Location = new System.Drawing.Point(175, 15);
+            this.viewItem_viewOnlineBtn.Location = new System.Drawing.Point(217, 15);
             this.viewItem_viewOnlineBtn.Name = "viewItem_viewOnlineBtn";
             this.viewItem_viewOnlineBtn.Size = new System.Drawing.Size(75, 23);
             this.viewItem_viewOnlineBtn.TabIndex = 0;
@@ -146,12 +133,26 @@ namespace MyCinema
             this.viewItem_viewOnlineBtn.UseVisualStyleBackColor = true;
             this.viewItem_viewOnlineBtn.Click += new System.EventHandler(this.viewItem_viewOnlineBtn_Click);
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Field";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 200;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Value";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 500;
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(615, 400);
+            this.ClientSize = new System.Drawing.Size(718, 522);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
@@ -173,10 +174,10 @@ namespace MyCinema
         private System.Windows.Forms.Label movieView_topPanel_title;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.Button viewItem_removeBtn;
         private System.Windows.Forms.Button viewItem_editBtn;
         private System.Windows.Forms.Button viewItem_viewOnlineBtn;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
     }
 }

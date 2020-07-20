@@ -43,7 +43,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(615, 35);
+            this.panel1.Size = new System.Drawing.Size(718, 35);
             this.panel1.TabIndex = 0;
             // 
             // aboutUs_title
@@ -53,7 +53,7 @@
             this.aboutUs_title.ForeColor = System.Drawing.Color.White;
             this.aboutUs_title.Location = new System.Drawing.Point(0, 0);
             this.aboutUs_title.Name = "aboutUs_title";
-            this.aboutUs_title.Size = new System.Drawing.Size(615, 35);
+            this.aboutUs_title.Size = new System.Drawing.Size(718, 35);
             this.aboutUs_title.TabIndex = 0;
             this.aboutUs_title.Text = "About Us";
             this.aboutUs_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -64,7 +64,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(242, 83);
+            this.label1.Location = new System.Drawing.Point(294, 144);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(120, 31);
             this.label1.TabIndex = 1;
@@ -77,7 +77,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(182, 178);
+            this.label2.Location = new System.Drawing.Point(234, 239);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(247, 20);
             this.label2.TabIndex = 2;
@@ -89,7 +89,7 @@
             this.linkLabel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.Location = new System.Drawing.Point(273, 144);
+            this.linkLabel1.Location = new System.Drawing.Point(325, 205);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(57, 20);
             this.linkLabel1.TabIndex = 3;
@@ -103,7 +103,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(615, 400);
+            this.ClientSize = new System.Drawing.Size(718, 522);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);

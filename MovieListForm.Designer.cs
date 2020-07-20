@@ -36,8 +36,6 @@ namespace MyCinema
             this.panel1 = new System.Windows.Forms.Panel();
             this.topPanel_title = new System.Windows.Forms.Label();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
@@ -49,7 +47,7 @@ namespace MyCinema
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(615, 35);
+            this.panel1.Size = new System.Drawing.Size(718, 35);
             this.panel1.TabIndex = 0;
             // 
             // topPanel_title
@@ -59,7 +57,7 @@ namespace MyCinema
             this.topPanel_title.ForeColor = System.Drawing.Color.White;
             this.topPanel_title.Location = new System.Drawing.Point(0, 0);
             this.topPanel_title.Name = "topPanel_title";
-            this.topPanel_title.Size = new System.Drawing.Size(615, 35);
+            this.topPanel_title.Size = new System.Drawing.Size(718, 35);
             this.topPanel_title.TabIndex = 0;
             this.topPanel_title.Text = "Movie list";
             this.topPanel_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -99,31 +97,17 @@ namespace MyCinema
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView.Size = new System.Drawing.Size(615, 365);
+            this.dataGridView.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.Size = new System.Drawing.Size(718, 487);
             this.dataGridView.TabIndex = 1;
             this.dataGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellDoubleClick);
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Field";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.Column1.Width = 150;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Value";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 300;
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(615, 400);
+            this.ClientSize = new System.Drawing.Size(718, 522);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.panel1);
             this.Name = "Form2";
@@ -139,7 +123,5 @@ namespace MyCinema
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label topPanel_title;
         private System.Windows.Forms.DataGridView dataGridView;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
     }
 }

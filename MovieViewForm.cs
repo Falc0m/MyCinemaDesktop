@@ -22,8 +22,10 @@ namespace MyCinema
         {
             this.movie = movie;
             this.MainPanel = MainPanel;
+
             InitializeComponent();
             PopulateTable();
+            ApplyTableChanges();
 
         }
 
@@ -55,7 +57,57 @@ namespace MyCinema
             row.Cells[0].Value = "Description";
             row.Cells[1].Value = movie.Description;
             dataGridView1.Rows.Add(row);
+
+            row = new DataGridViewRow();
+            row.CreateCells(dataGridView1);
+            row.Cells[0].Value = "Premiere Date";
+            row.Cells[1].Value = movie.PremiereDate.ToString();
+            dataGridView1.Rows.Add(row);
+
+            row = new DataGridViewRow();
+            row.CreateCells(dataGridView1);
+            row.Cells[0].Value = "Date added";
+            row.Cells[1].Value = movie.DateAdded.ToString();
+            dataGridView1.Rows.Add(row);
+
+            row = new DataGridViewRow();
+            row.CreateCells(dataGridView1);
+            row.Cells[0].Value = "Database Id";
+            row.Cells[1].Value = movie.Id.ToString();
+            dataGridView1.Rows.Add(row);
         }
+
+
+        private void ApplyTableChanges()
+        {
+
+            // resize columns
+            dataGridView1.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.AutoResizeColumns();
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+
+            //change font size
+            dataGridView1.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 11);
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 11);
+
+            // stripping
+            this.dataGridView1.RowsDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+
+            // border
+            dataGridView1.BorderStyle = BorderStyle.None;
+
+            // white font
+            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dataGridView1.DefaultCellStyle.ForeColor = Color.White;
+
+            // text aligment
+            dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        }
+
+
 
         private void viewItem_viewOnlineBtn_Click(object sender, EventArgs e)
         {
