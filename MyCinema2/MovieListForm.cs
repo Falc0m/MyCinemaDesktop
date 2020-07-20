@@ -17,15 +17,6 @@ namespace MyCinema
         private Panel MainPanel;
 
 
-        private void ReadAllDocuments()
-        {
-            MongoClient mongoClient = new MongoClient("mongodb://W60113:asd123@13.53.159.1:27017");
-            IMongoDatabase db = mongoClient.GetDatabase("my_cinema");
-            IMongoCollection<Movie> collection = db.GetCollection<Movie>("movies");
-
-            movieList = collection.AsQueryable().ToList<Movie>();
-            dataGridView.DataSource = movieList;
-        }
 
         private void ApplyTableChanges()
         {
@@ -69,8 +60,12 @@ namespace MyCinema
         public Form2(Panel panel)
         {
             this.MainPanel = panel;
+
             InitializeComponent();
-            ReadAllDocuments();
+
+            movieList = Utils.AllDocumentsToList();
+            dataGridView.DataSource = movieList;
+
             ApplyTableChanges();
         }
 

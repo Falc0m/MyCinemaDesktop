@@ -15,6 +15,7 @@ namespace MyCinema2
     public partial class AddMovieForm : Form
     {
         private Movie passedMovie;
+
         public AddMovieForm()
         {
             InitializeComponent();
