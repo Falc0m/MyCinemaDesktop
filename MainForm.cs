@@ -218,6 +218,7 @@ namespace MyCinema
 
             mainPanel.Controls.Add(passedForm);
             mainPanel.Tag = passedForm;
+            label1.Hide();
 
             passedForm.BringToFront();
             passedForm.Show();

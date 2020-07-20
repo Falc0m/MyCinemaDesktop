@@ -14,7 +14,7 @@ namespace MyCinema2
 {
     public partial class AddMovieForm : Form
     {
-        private Movie movie;
+        private Movie passedMovie;
         public AddMovieForm()
         {
             InitializeComponent();
@@ -23,8 +23,8 @@ namespace MyCinema2
 
         public AddMovieForm(Movie movie)
         {
-            this.movie = movie;
-            InitializeComponent();
+            passedMovie = movie;
+            InitializeComponent(passedMovie);
         }
 
         private void addMovie_submitBtn_Click(object sender, EventArgs e)
@@ -33,20 +33,25 @@ namespace MyCinema2
             IMongoDatabase db = mongoClient.GetDatabase("my_cinema");
             IMongoCollection<Movie> collection = db.GetCollection<Movie>("movies");
 
-            Movie m = null;
+            Movie movie = null;
 
             // movie exists
-            if (addMovie_idTxt.Text.Length != 0)
+            if (passedMovie != null)
             {
-                // update code
+                movie = collection.Find(m => m.Id.Equals(passedMovie.Id)).Limit(1).Single();
+                movie.Title = addMovie_titleTxt.Text;
+                movie.Category = addMovie_categoryCmbBox.Text;
+                movie.Description = addMovie_descriptionTxt.Text;
+                movie.Rating = Int32.Parse(addMovie_ratingCmbBox.Text);
+                movie.PremiereDate = addMovie_datePicker.Value;
+                collection.ReplaceOne(m => m.Id.Equals(passedMovie.Id), movie);
             }
             else
             {
-                m = new Movie(addMovie_titleTxt.Text, addMovie_categoryCmbBox.Text, Int32.Parse(addMovie_ratingCmbBox.Text), addMovie_descriptionTxt.Text);
+                movie = new Movie(addMovie_titleTxt.Text, addMovie_categoryCmbBox.Text, Int32.Parse(addMovie_ratingCmbBox.Text), addMovie_descriptionTxt.Text, DateTime.Now, addMovie_datePicker.Value);
+                collection.InsertOne(movie);
             }
 
-
-            collection.InsertOne(m);
 
         }
 

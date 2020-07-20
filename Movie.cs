@@ -11,12 +11,14 @@ namespace MyCinema
     [BsonIgnoreExtraElements]
     public class Movie
     {
-        public Movie(string title, string category, int rating, string description)
+        public Movie(string title, string category, int rating, string description, DateTime dateAdded,DateTime premiereDate)
         {
             Title = title;
             Category = category;
             Rating = rating;
             Description = description;
+            DateAdded = dateAdded;
+            PremiereDate = premiereDate;
         }
 
         public Movie()
@@ -24,7 +26,7 @@ namespace MyCinema
         }
 
         [BsonId]
-        public Object Id { get; set; }
+        public ObjectId Id { get; set; }
 
         [BsonElement("title")]
         public String Title { get; set; }
@@ -42,6 +44,11 @@ namespace MyCinema
         [BsonDateTimeOptions(Kind = DateTimeKind.Local)]
         [BsonElement("dateAdded")]
         public DateTime DateAdded
+        { get; set; }
+
+        [BsonDateTimeOptions(Kind = DateTimeKind.Local)]
+        [BsonElement("premiereDate")]
+        public DateTime PremiereDate
         { get; set; }
 
 

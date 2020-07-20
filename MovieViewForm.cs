@@ -1,4 +1,5 @@
 ﻿using MongoDB.Driver;
+using MyCinema2;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -58,12 +59,12 @@ namespace MyCinema
 
         private void viewItem_viewOnlineBtn_Click(object sender, EventArgs e)
         {
-            Process.Start("http://13.53.159.1:8080/movies/movie?id=" + movie.Id);
+            Process.Start("http://13.53.159.1:8080/view-movie?id=" + movie.Id);
         }
 
         private void viewItem_editBtn_Click(object sender, EventArgs e)
         {
-
+            setMainForm(new AddMovieForm(movie));
         }
 
         private void viewItem_removeBtn_Click(object sender, EventArgs e)
