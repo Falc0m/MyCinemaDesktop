@@ -31,6 +31,8 @@
         private System.Windows.Forms.Label app_title;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button sidePanel_exitApp;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 

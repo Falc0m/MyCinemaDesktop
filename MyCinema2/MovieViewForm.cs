@@ -14,17 +14,17 @@ namespace MyCinema
 {
     public partial class Form3 : Form
     {
-        private Movie movie;
-        private Panel MainPanel;
+        private readonly Movie Movie;
+        private readonly Panel MainPanel;
 
         /// <summary>
         /// Construtor which uses passed movie to populate detailed view's table and 
         /// </summary>
-        /// <param name="movie"></param>
-        /// <param name="MainPanel"></param>
+        /// <param name="Movie">Passed movie from previous form</param>
+        /// <param name="MainPanel">Passed main panel</param>
         public Form3(Movie movie, Panel MainPanel)
         {
-            this.movie = movie;
+            this.Movie = movie;
             this.MainPanel = MainPanel;
 
             InitializeComponent();
@@ -41,46 +41,46 @@ namespace MyCinema
             DataGridViewRow row = new DataGridViewRow();
             row.CreateCells(dataGridView1);
             row.Cells[0].Value = "Title";
-            row.Cells[1].Value = movie.Title;
+            row.Cells[1].Value = Movie.Title;
             dataGridView1.Rows.Add(row);
 
 
             row = new DataGridViewRow();
             row.CreateCells(dataGridView1);
             row.Cells[0].Value = "Category";
-            row.Cells[1].Value = movie.Category;
+            row.Cells[1].Value = Movie.Category;
             dataGridView1.Rows.Add(row);
 
 
             row = new DataGridViewRow();
             row.CreateCells(dataGridView1);
             row.Cells[0].Value = "Rating";
-            row.Cells[1].Value = movie.Rating;
+            row.Cells[1].Value = Movie.Rating;
             dataGridView1.Rows.Add(row);
 
 
             row = new DataGridViewRow();
             row.CreateCells(dataGridView1);
             row.Cells[0].Value = "Description";
-            row.Cells[1].Value = movie.Description;
+            row.Cells[1].Value = Movie.Description;
             dataGridView1.Rows.Add(row);
 
             row = new DataGridViewRow();
             row.CreateCells(dataGridView1);
             row.Cells[0].Value = "Premiere Date";
-            row.Cells[1].Value = movie.PremiereDate.ToString();
+            row.Cells[1].Value = Movie.PremiereDate.ToString();
             dataGridView1.Rows.Add(row);
 
             row = new DataGridViewRow();
             row.CreateCells(dataGridView1);
             row.Cells[0].Value = "Date added";
-            row.Cells[1].Value = movie.DateAdded.ToString();
+            row.Cells[1].Value = Movie.DateAdded.ToString();
             dataGridView1.Rows.Add(row);
 
             row = new DataGridViewRow();
             row.CreateCells(dataGridView1);
             row.Cells[0].Value = "Database Id";
-            row.Cells[1].Value = movie.Id.ToString();
+            row.Cells[1].Value = Movie.Id.ToString();
             dataGridView1.Rows.Add(row);
         }
 
@@ -126,7 +126,7 @@ namespace MyCinema
         /// <param name="e"></param>
         private void viewItem_viewOnlineBtn_Click(object sender, EventArgs e)
         {
-            Process.Start("http://13.53.159.1:8080/view-movie?id=" + movie.Id);
+            Process.Start("http://13.53.159.1:8080/view-movie?id=" + Movie.Id);
         }
 
         /// <summary>
@@ -136,7 +136,7 @@ namespace MyCinema
         /// <param name="e"></param>
         private void viewItem_editBtn_Click(object sender, EventArgs e)
         {
-            setMainForm(new AddMovieForm(movie));
+            SetMainForm(new AddMovieForm(Movie));
         }
 
         /// <summary>
@@ -146,20 +146,15 @@ namespace MyCinema
         /// <param name="e"></param>
         private void viewItem_removeBtn_Click(object sender, EventArgs e)
         {
-            MongoClient mongoClient = new MongoClient("mongodb://W60113:asd123@13.53.159.1:27017");
-            IMongoDatabase db = mongoClient.GetDatabase("my_cinema");
-            IMongoCollection<Movie> collection = db.GetCollection<Movie>("movies");
-
-            collection.DeleteOne(m => m.Id == movie.Id);
-
-            setMainForm(new Form2(MainPanel));
+            Utils.DeleteDocument(Movie);
+            SetMainForm(new Form2(MainPanel));
         }
 
         /// <summary>
         /// Method used to fill right panel of main form
         /// </summary>
         /// <param name="passedForm"></param>
-        private void setMainForm(Form passedForm)
+        private void SetMainForm(Form passedForm)
         {
 
             this.Close();

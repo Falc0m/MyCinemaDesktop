@@ -46,8 +46,10 @@ namespace MyCinema
             this.addMovie_titleLabel = new System.Windows.Forms.Label();
             this.addMovie_idTxt = new System.Windows.Forms.TextBox();
             this.addMovie_idLabel = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -74,19 +76,7 @@ namespace MyCinema
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.addMovie_descriptionTxt);
-            this.panel2.Controls.Add(this.addMovie_submitBtn);
-            this.panel2.Controls.Add(this.addMovie_ratingCmbBox);
-            this.panel2.Controls.Add(this.addMovie_categoryCmbBox);
-            this.panel2.Controls.Add(this.addMovie_datePicker);
-            this.panel2.Controls.Add(this.addMovie_premiereDateLabel);
-            this.panel2.Controls.Add(this.addMovie_ratingLabel);
-            this.panel2.Controls.Add(this.addMovie_descriptionLabel);
-            this.panel2.Controls.Add(this.addMovie_categoryLabel);
-            this.panel2.Controls.Add(this.addMovie_titleTxt);
-            this.panel2.Controls.Add(this.addMovie_titleLabel);
-            this.panel2.Controls.Add(this.addMovie_idTxt);
-            this.panel2.Controls.Add(this.addMovie_idLabel);
+            this.panel2.Controls.Add(this.groupBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 35);
             this.panel2.Name = "panel2";
@@ -95,7 +85,7 @@ namespace MyCinema
             // 
             // addMovie_descriptionTxt
             // 
-            this.addMovie_descriptionTxt.Location = new System.Drawing.Point(284, 224);
+            this.addMovie_descriptionTxt.Location = new System.Drawing.Point(144, 190);
             this.addMovie_descriptionTxt.Name = "addMovie_descriptionTxt";
             this.addMovie_descriptionTxt.Size = new System.Drawing.Size(230, 84);
             this.addMovie_descriptionTxt.TabIndex = 6;
@@ -103,7 +93,8 @@ namespace MyCinema
             // 
             // addMovie_submitBtn
             // 
-            this.addMovie_submitBtn.Location = new System.Drawing.Point(284, 369);
+            this.addMovie_submitBtn.ForeColor = System.Drawing.Color.Black;
+            this.addMovie_submitBtn.Location = new System.Drawing.Point(144, 336);
             this.addMovie_submitBtn.Name = "addMovie_submitBtn";
             this.addMovie_submitBtn.Size = new System.Drawing.Size(75, 23);
             this.addMovie_submitBtn.TabIndex = 5;
@@ -125,7 +116,7 @@ namespace MyCinema
             "8",
             "9",
             "10"});
-            this.addMovie_ratingCmbBox.Location = new System.Drawing.Point(284, 182);
+            this.addMovie_ratingCmbBox.Location = new System.Drawing.Point(144, 148);
             this.addMovie_ratingCmbBox.Name = "addMovie_ratingCmbBox";
             this.addMovie_ratingCmbBox.Size = new System.Drawing.Size(230, 21);
             this.addMovie_ratingCmbBox.TabIndex = 4;
@@ -139,14 +130,14 @@ namespace MyCinema
             "Drama",
             "Western",
             "Criminal"});
-            this.addMovie_categoryCmbBox.Location = new System.Drawing.Point(284, 144);
+            this.addMovie_categoryCmbBox.Location = new System.Drawing.Point(144, 110);
             this.addMovie_categoryCmbBox.Name = "addMovie_categoryCmbBox";
             this.addMovie_categoryCmbBox.Size = new System.Drawing.Size(230, 21);
             this.addMovie_categoryCmbBox.TabIndex = 4;
             // 
             // addMovie_datePicker
             // 
-            this.addMovie_datePicker.Location = new System.Drawing.Point(284, 325);
+            this.addMovie_datePicker.Location = new System.Drawing.Point(144, 291);
             this.addMovie_datePicker.Name = "addMovie_datePicker";
             this.addMovie_datePicker.Size = new System.Drawing.Size(230, 20);
             this.addMovie_datePicker.TabIndex = 3;
@@ -156,7 +147,7 @@ namespace MyCinema
             this.addMovie_premiereDateLabel.AutoSize = true;
             this.addMovie_premiereDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addMovie_premiereDateLabel.ForeColor = System.Drawing.Color.White;
-            this.addMovie_premiereDateLabel.Location = new System.Drawing.Point(149, 325);
+            this.addMovie_premiereDateLabel.Location = new System.Drawing.Point(9, 291);
             this.addMovie_premiereDateLabel.Name = "addMovie_premiereDateLabel";
             this.addMovie_premiereDateLabel.Size = new System.Drawing.Size(111, 20);
             this.addMovie_premiereDateLabel.TabIndex = 1;
@@ -167,7 +158,7 @@ namespace MyCinema
             this.addMovie_ratingLabel.AutoSize = true;
             this.addMovie_ratingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addMovie_ratingLabel.ForeColor = System.Drawing.Color.White;
-            this.addMovie_ratingLabel.Location = new System.Drawing.Point(204, 180);
+            this.addMovie_ratingLabel.Location = new System.Drawing.Point(64, 146);
             this.addMovie_ratingLabel.Name = "addMovie_ratingLabel";
             this.addMovie_ratingLabel.Size = new System.Drawing.Size(56, 20);
             this.addMovie_ratingLabel.TabIndex = 1;
@@ -178,7 +169,7 @@ namespace MyCinema
             this.addMovie_descriptionLabel.AutoSize = true;
             this.addMovie_descriptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addMovie_descriptionLabel.ForeColor = System.Drawing.Color.White;
-            this.addMovie_descriptionLabel.Location = new System.Drawing.Point(171, 255);
+            this.addMovie_descriptionLabel.Location = new System.Drawing.Point(31, 221);
             this.addMovie_descriptionLabel.Name = "addMovie_descriptionLabel";
             this.addMovie_descriptionLabel.Size = new System.Drawing.Size(89, 20);
             this.addMovie_descriptionLabel.TabIndex = 1;
@@ -189,7 +180,7 @@ namespace MyCinema
             this.addMovie_categoryLabel.AutoSize = true;
             this.addMovie_categoryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addMovie_categoryLabel.ForeColor = System.Drawing.Color.White;
-            this.addMovie_categoryLabel.Location = new System.Drawing.Point(187, 142);
+            this.addMovie_categoryLabel.Location = new System.Drawing.Point(47, 108);
             this.addMovie_categoryLabel.Name = "addMovie_categoryLabel";
             this.addMovie_categoryLabel.Size = new System.Drawing.Size(73, 20);
             this.addMovie_categoryLabel.TabIndex = 1;
@@ -197,7 +188,7 @@ namespace MyCinema
             // 
             // addMovie_titleTxt
             // 
-            this.addMovie_titleTxt.Location = new System.Drawing.Point(284, 107);
+            this.addMovie_titleTxt.Location = new System.Drawing.Point(144, 73);
             this.addMovie_titleTxt.Name = "addMovie_titleTxt";
             this.addMovie_titleTxt.Size = new System.Drawing.Size(230, 20);
             this.addMovie_titleTxt.TabIndex = 2;
@@ -207,7 +198,7 @@ namespace MyCinema
             this.addMovie_titleLabel.AutoSize = true;
             this.addMovie_titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addMovie_titleLabel.ForeColor = System.Drawing.Color.White;
-            this.addMovie_titleLabel.Location = new System.Drawing.Point(222, 107);
+            this.addMovie_titleLabel.Location = new System.Drawing.Point(82, 73);
             this.addMovie_titleLabel.Name = "addMovie_titleLabel";
             this.addMovie_titleLabel.Size = new System.Drawing.Size(38, 20);
             this.addMovie_titleLabel.TabIndex = 1;
@@ -217,7 +208,7 @@ namespace MyCinema
             // 
             this.addMovie_idTxt.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.addMovie_idTxt.Enabled = false;
-            this.addMovie_idTxt.Location = new System.Drawing.Point(284, 71);
+            this.addMovie_idTxt.Location = new System.Drawing.Point(144, 37);
             this.addMovie_idTxt.Name = "addMovie_idTxt";
             this.addMovie_idTxt.Size = new System.Drawing.Size(230, 20);
             this.addMovie_idTxt.TabIndex = 2;
@@ -227,11 +218,34 @@ namespace MyCinema
             this.addMovie_idLabel.AutoSize = true;
             this.addMovie_idLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addMovie_idLabel.ForeColor = System.Drawing.Color.White;
-            this.addMovie_idLabel.Location = new System.Drawing.Point(237, 71);
+            this.addMovie_idLabel.Location = new System.Drawing.Point(97, 37);
             this.addMovie_idLabel.Name = "addMovie_idLabel";
             this.addMovie_idLabel.Size = new System.Drawing.Size(23, 20);
             this.addMovie_idLabel.TabIndex = 1;
             this.addMovie_idLabel.Text = "Id";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.addMovie_idTxt);
+            this.groupBox1.Controls.Add(this.addMovie_descriptionTxt);
+            this.groupBox1.Controls.Add(this.addMovie_idLabel);
+            this.groupBox1.Controls.Add(this.addMovie_submitBtn);
+            this.groupBox1.Controls.Add(this.addMovie_titleLabel);
+            this.groupBox1.Controls.Add(this.addMovie_ratingCmbBox);
+            this.groupBox1.Controls.Add(this.addMovie_titleTxt);
+            this.groupBox1.Controls.Add(this.addMovie_categoryCmbBox);
+            this.groupBox1.Controls.Add(this.addMovie_categoryLabel);
+            this.groupBox1.Controls.Add(this.addMovie_datePicker);
+            this.groupBox1.Controls.Add(this.addMovie_descriptionLabel);
+            this.groupBox1.Controls.Add(this.addMovie_premiereDateLabel);
+            this.groupBox1.Controls.Add(this.addMovie_ratingLabel);
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
+            this.groupBox1.Location = new System.Drawing.Point(158, 39);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(399, 382);
+            this.groupBox1.TabIndex = 7;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Add/Edit Form";
             // 
             // AddMovieForm
             // 
@@ -245,7 +259,8 @@ namespace MyCinema
             this.Text = "My Cinema";
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -269,5 +284,6 @@ namespace MyCinema
         private System.Windows.Forms.RichTextBox addMovie_descriptionTxt;
         private System.Windows.Forms.ComboBox addMovie_ratingCmbBox;
         private System.Windows.Forms.Label addMovie_ratingLabel;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

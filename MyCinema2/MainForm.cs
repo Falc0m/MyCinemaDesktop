@@ -32,6 +32,7 @@ namespace MyCinema
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.sidePanel = new System.Windows.Forms.Panel();
+            this.sidePanel_exitApp = new System.Windows.Forms.Button();
             this.sidePanel_aboutUsBtn = new System.Windows.Forms.Button();
             this.sidePanel_viewOnline = new System.Windows.Forms.Button();
             this.sidePanel_addMovieBtn = new System.Windows.Forms.Button();
@@ -40,10 +41,13 @@ namespace MyCinema
             this.app_title = new System.Windows.Forms.Label();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.sidePanel_exitApp = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.sidePanel.SuspendLayout();
             this.sidePanel_logo.SuspendLayout();
             this.mainPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // sidePanel
@@ -62,6 +66,21 @@ namespace MyCinema
             this.sidePanel.Name = "sidePanel";
             this.sidePanel.Size = new System.Drawing.Size(200, 561);
             this.sidePanel.TabIndex = 0;
+            // 
+            // sidePanel_exitApp
+            // 
+            this.sidePanel_exitApp.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.sidePanel_exitApp.FlatAppearance.BorderSize = 0;
+            this.sidePanel_exitApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sidePanel_exitApp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sidePanel_exitApp.ForeColor = System.Drawing.Color.White;
+            this.sidePanel_exitApp.Location = new System.Drawing.Point(0, 521);
+            this.sidePanel_exitApp.Name = "sidePanel_exitApp";
+            this.sidePanel_exitApp.Size = new System.Drawing.Size(200, 40);
+            this.sidePanel_exitApp.TabIndex = 7;
+            this.sidePanel_exitApp.Text = "Exit";
+            this.sidePanel_exitApp.UseVisualStyleBackColor = true;
+            this.sidePanel_exitApp.Click += new System.EventHandler(this.sidePanel_exitApp_Click);
             // 
             // sidePanel_aboutUsBtn
             // 
@@ -154,7 +173,8 @@ namespace MyCinema
             // mainPanel
             // 
             this.mainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.mainPanel.Controls.Add(this.label1);
+            this.mainPanel.Controls.Add(this.groupBox1);
+            this.mainPanel.Controls.Add(this.pictureBox1);
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPanel.Location = new System.Drawing.Point(200, 0);
             this.mainPanel.Name = "mainPanel";
@@ -166,26 +186,32 @@ namespace MyCinema
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(130, 255);
+            this.label1.Location = new System.Drawing.Point(6, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(457, 168);
             this.label1.TabIndex = 0;
             this.label1.Text = resources.GetString("label1.Text");
             // 
-            // sidePanel_exitApp
+            // pictureBox1
             // 
-            this.sidePanel_exitApp.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.sidePanel_exitApp.FlatAppearance.BorderSize = 0;
-            this.sidePanel_exitApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.sidePanel_exitApp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sidePanel_exitApp.ForeColor = System.Drawing.Color.White;
-            this.sidePanel_exitApp.Location = new System.Drawing.Point(0, 521);
-            this.sidePanel_exitApp.Name = "sidePanel_exitApp";
-            this.sidePanel_exitApp.Size = new System.Drawing.Size(200, 40);
-            this.sidePanel_exitApp.TabIndex = 7;
-            this.sidePanel_exitApp.Text = "Exit";
-            this.sidePanel_exitApp.UseVisualStyleBackColor = true;
-            this.sidePanel_exitApp.Click += new System.EventHandler(this.sidePanel_exitApp_Click);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(62, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(514, 329);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
+            this.groupBox1.Location = new System.Drawing.Point(107, 337);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(469, 212);
+            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Information";
             // 
             // Form1
             // 
@@ -197,7 +223,9 @@ namespace MyCinema
             this.sidePanel.ResumeLayout(false);
             this.sidePanel_logo.ResumeLayout(false);
             this.mainPanel.ResumeLayout(false);
-            this.mainPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -234,6 +262,7 @@ namespace MyCinema
             mainPanel.Controls.Add(passedForm);
             mainPanel.Tag = passedForm;
             label1.Hide();
+            pictureBox1.Hide();
 
             passedForm.BringToFront();
             passedForm.Show();

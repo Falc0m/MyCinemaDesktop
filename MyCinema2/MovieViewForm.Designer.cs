@@ -35,15 +35,13 @@ namespace MyCinema
             this.panel1 = new System.Windows.Forms.Panel();
             this.movieView_topPanel_title = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.viewItem_removeBtn = new System.Windows.Forms.Button();
             this.viewItem_editBtn = new System.Windows.Forms.Button();
             this.viewItem_viewOnlineBtn = new System.Windows.Forms.Button();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -63,7 +61,6 @@ namespace MyCinema
             this.movieView_topPanel_title.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.movieView_topPanel_title.Location = new System.Drawing.Point(0, 0);
             this.movieView_topPanel_title.Name = "movieView_topPanel_title";
-            this.movieView_topPanel_title.Text = movie.Title;
             this.movieView_topPanel_title.Size = new System.Drawing.Size(718, 35);
             this.movieView_topPanel_title.TabIndex = 0;
             this.movieView_topPanel_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -86,52 +83,8 @@ namespace MyCinema
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.Size = new System.Drawing.Size(512, 308);
+            this.dataGridView1.Size = new System.Drawing.Size(458, 260);
             this.dataGridView1.TabIndex = 1;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.viewItem_removeBtn);
-            this.panel2.Controls.Add(this.viewItem_editBtn);
-            this.panel2.Controls.Add(this.viewItem_viewOnlineBtn);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 472);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(718, 50);
-            this.panel2.TabIndex = 2;
-            // 
-            // viewItem_removeBtn
-            // 
-            this.viewItem_removeBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.viewItem_removeBtn.Location = new System.Drawing.Point(379, 15);
-            this.viewItem_removeBtn.Name = "viewItem_removeBtn";
-            this.viewItem_removeBtn.Size = new System.Drawing.Size(75, 23);
-            this.viewItem_removeBtn.TabIndex = 0;
-            this.viewItem_removeBtn.Text = "Remove";
-            this.viewItem_removeBtn.UseVisualStyleBackColor = true;
-            this.viewItem_removeBtn.Click += new System.EventHandler(this.viewItem_removeBtn_Click);
-            // 
-            // viewItem_editBtn
-            // 
-            this.viewItem_editBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.viewItem_editBtn.Location = new System.Drawing.Point(298, 15);
-            this.viewItem_editBtn.Name = "viewItem_editBtn";
-            this.viewItem_editBtn.Size = new System.Drawing.Size(75, 23);
-            this.viewItem_editBtn.TabIndex = 0;
-            this.viewItem_editBtn.Text = "Edit";
-            this.viewItem_editBtn.UseVisualStyleBackColor = true;
-            this.viewItem_editBtn.Click += new System.EventHandler(this.viewItem_editBtn_Click);
-            // 
-            // viewItem_viewOnlineBtn
-            // 
-            this.viewItem_viewOnlineBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.viewItem_viewOnlineBtn.Location = new System.Drawing.Point(217, 15);
-            this.viewItem_viewOnlineBtn.Name = "viewItem_viewOnlineBtn";
-            this.viewItem_viewOnlineBtn.Size = new System.Drawing.Size(75, 23);
-            this.viewItem_viewOnlineBtn.TabIndex = 0;
-            this.viewItem_viewOnlineBtn.Text = "View online";
-            this.viewItem_viewOnlineBtn.UseVisualStyleBackColor = true;
-            this.viewItem_viewOnlineBtn.Click += new System.EventHandler(this.viewItem_viewOnlineBtn_Click);
             // 
             // Column1
             // 
@@ -147,20 +100,54 @@ namespace MyCinema
             this.Column2.ReadOnly = true;
             this.Column2.Width = 500;
             // 
+            // viewItem_removeBtn
+            // 
+            this.viewItem_removeBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.viewItem_removeBtn.Location = new System.Drawing.Point(383, 382);
+            this.viewItem_removeBtn.Name = "viewItem_removeBtn";
+            this.viewItem_removeBtn.Size = new System.Drawing.Size(75, 23);
+            this.viewItem_removeBtn.TabIndex = 0;
+            this.viewItem_removeBtn.Text = "Remove";
+            this.viewItem_removeBtn.UseVisualStyleBackColor = true;
+            this.viewItem_removeBtn.Click += new System.EventHandler(this.viewItem_removeBtn_Click);
+            // 
+            // viewItem_editBtn
+            // 
+            this.viewItem_editBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.viewItem_editBtn.Location = new System.Drawing.Point(302, 382);
+            this.viewItem_editBtn.Name = "viewItem_editBtn";
+            this.viewItem_editBtn.Size = new System.Drawing.Size(75, 23);
+            this.viewItem_editBtn.TabIndex = 0;
+            this.viewItem_editBtn.Text = "Edit";
+            this.viewItem_editBtn.UseVisualStyleBackColor = true;
+            this.viewItem_editBtn.Click += new System.EventHandler(this.viewItem_editBtn_Click);
+            // 
+            // viewItem_viewOnlineBtn
+            // 
+            this.viewItem_viewOnlineBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.viewItem_viewOnlineBtn.Location = new System.Drawing.Point(221, 382);
+            this.viewItem_viewOnlineBtn.Name = "viewItem_viewOnlineBtn";
+            this.viewItem_viewOnlineBtn.Size = new System.Drawing.Size(75, 23);
+            this.viewItem_viewOnlineBtn.TabIndex = 0;
+            this.viewItem_viewOnlineBtn.Text = "View online";
+            this.viewItem_viewOnlineBtn.UseVisualStyleBackColor = true;
+            this.viewItem_viewOnlineBtn.Click += new System.EventHandler(this.viewItem_viewOnlineBtn_Click);
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(718, 522);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.viewItem_removeBtn);
+            this.Controls.Add(this.viewItem_editBtn);
+            this.Controls.Add(this.viewItem_viewOnlineBtn);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
             this.Name = "Form3";
             this.Text = "My Cinema";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -173,7 +160,6 @@ namespace MyCinema
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label movieView_topPanel_title;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button viewItem_removeBtn;
         private System.Windows.Forms.Button viewItem_editBtn;
         private System.Windows.Forms.Button viewItem_viewOnlineBtn;

@@ -14,7 +14,7 @@ namespace MyCinema
 {
     public partial class AddMovieForm : Form
     {
-        private Movie passedMovie;
+        private readonly Movie PassedMovie;
 
         /// <summary>
         /// Default form constructor
@@ -27,12 +27,11 @@ namespace MyCinema
         /// <summary>
         /// Form constructor with movie parameter used to populate fields in our form
         /// </summary>
-        /// <param name="movie"></param>
+        /// <param name="Movie">Movie reference passed from detailed view</param>
         public AddMovieForm(Movie movie)
         {
-            passedMovie = movie;
+            PassedMovie = movie;
             InitializeComponent();
-
             PopulateForm();
         }
 
@@ -41,12 +40,12 @@ namespace MyCinema
         /// </summary>
         private void PopulateForm()
         {
-            addMovie_titleTxt.Text = passedMovie.Title;
-            addMovie_ratingCmbBox.Text = passedMovie.Rating.ToString();
-            addMovie_idTxt.Text = passedMovie.Id.ToString();
-            addMovie_descriptionTxt.Text = passedMovie.Description;
-            addMovie_datePicker.Value = passedMovie.PremiereDate;
-            addMovie_categoryCmbBox.Text = passedMovie.Category.ToString();
+            addMovie_titleTxt.Text = PassedMovie.Title;
+            addMovie_ratingCmbBox.Text = PassedMovie.Rating.ToString();
+            addMovie_idTxt.Text = PassedMovie.Id.ToString();
+            addMovie_descriptionTxt.Text = PassedMovie.Description;
+            addMovie_datePicker.Value = PassedMovie.PremiereDate;
+            addMovie_categoryCmbBox.Text = PassedMovie.Category.ToString();
         }
 
         /// <summary>
@@ -56,9 +55,6 @@ namespace MyCinema
         /// <param name="e"></param>
         private void addMovie_submitBtn_Click(object sender, EventArgs e)
         {
-            MongoClient mongoClient = new MongoClient("mongodb://W60113:asd123@13.53.159.1:27017");
-            IMongoDatabase db = mongoClient.GetDatabase("my_cinema");
-            IMongoCollection<Movie> collection = db.GetCollection<Movie>("movies");
 
 
             if (string.IsNullOrEmpty(addMovie_titleTxt.Text))
@@ -87,23 +83,25 @@ namespace MyCinema
                 return;
             }
 
-            Movie movie = null;
+            Movie Movie;
 
             // movie exists
-            if (passedMovie != null)
+            if (PassedMovie != null)
             {
-                movie = collection.Find(m => m.Id.Equals(passedMovie.Id)).Limit(1).Single();
-                movie.Title = addMovie_titleTxt.Text;
-                movie.Category = addMovie_categoryCmbBox.Text;
-                movie.Description = addMovie_descriptionTxt.Text;
-                movie.Rating = Int32.Parse(addMovie_ratingCmbBox.Text);
-                movie.PremiereDate = addMovie_datePicker.Value;
-                collection.ReplaceOne(m => m.Id.Equals(passedMovie.Id), movie);
+                Movie = Utils.FindById(PassedMovie.Id);
+
+                Movie.Title = addMovie_titleTxt.Text;
+                Movie.Category = addMovie_categoryCmbBox.Text;
+                Movie.Description = addMovie_descriptionTxt.Text;
+                Movie.Rating = Int32.Parse(addMovie_ratingCmbBox.Text);
+                Movie.PremiereDate = addMovie_datePicker.Value;
+
+                Utils.UpdateDocumentById(Movie.Id,Movie);
             }
             else
             {
-                movie = new Movie(addMovie_titleTxt.Text, addMovie_categoryCmbBox.Text, Int32.Parse(addMovie_ratingCmbBox.Text), addMovie_descriptionTxt.Text, DateTime.Now, addMovie_datePicker.Value);
-                collection.InsertOne(movie);
+                Movie = new Movie(addMovie_titleTxt.Text, addMovie_categoryCmbBox.Text, Int32.Parse(addMovie_ratingCmbBox.Text), addMovie_descriptionTxt.Text, DateTime.Now, addMovie_datePicker.Value);
+                Utils.InsertDocument(Movie);
             }
 
 
