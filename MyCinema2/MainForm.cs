@@ -237,7 +237,7 @@ namespace MyCinema
         /// <param name="e"></param>
         private void sidePanel_viewMoviesBtn_Click(object sender, EventArgs e)
         {
-            setMainForm(new Form2(mainPanel));
+            SetMainForm(new Form2(mainPanel));
             setActiveButton(Utils.ButtonNames.ViewMovies);
         }
 
@@ -245,7 +245,7 @@ namespace MyCinema
         ///  Sets right panel of main form to passed form
         /// </summary>
         /// <param name="passedForm">Passing form</param>
-        public void setMainForm(Form passedForm)
+        public void SetMainForm(Form passedForm)
         {
 
             if (activeForm != null)
@@ -263,6 +263,7 @@ namespace MyCinema
             mainPanel.Tag = passedForm;
             label1.Hide();
             pictureBox1.Hide();
+            groupBox1.Hide();
 
             passedForm.BringToFront();
             passedForm.Show();
@@ -276,7 +277,7 @@ namespace MyCinema
         /// <param name="e"></param>
         private void sidePanel_addMovieBtn_Click(object sender, EventArgs e)
         {
-            setMainForm(new AddMovieForm());
+            SetMainForm(new AddMovieForm());
             setActiveButton(Utils.ButtonNames.AddMovies);
 
         }
@@ -298,7 +299,7 @@ namespace MyCinema
         /// <param name="e"></param>
         private void sidePanel_aboutUsBtn_Click(object sender, EventArgs e)
         {
-            setMainForm(new AboutUsForm());
+            SetMainForm(new AboutUsForm());
             setActiveButton(Utils.ButtonNames.AboutUs);
         }
 
