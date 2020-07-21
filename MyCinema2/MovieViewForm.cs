@@ -18,6 +18,11 @@ namespace MyCinema
         private Movie movie;
         private Panel MainPanel;
 
+        /// <summary>
+        /// Construtor which uses passed movie to populate detailed view's table and 
+        /// </summary>
+        /// <param name="movie"></param>
+        /// <param name="MainPanel"></param>
         public Form3(Movie movie, Panel MainPanel)
         {
             this.movie = movie;
@@ -29,6 +34,9 @@ namespace MyCinema
 
         }
 
+        /// <summary>
+        /// Method used to create cells and rows in our table
+        /// </summary>
         private void PopulateTable()
         {
             DataGridViewRow row = new DataGridViewRow();
@@ -78,6 +86,9 @@ namespace MyCinema
         }
 
 
+        /// <summary>
+        /// Method used to apply post creation DataGridView changes
+        /// </summary>
         private void ApplyTableChanges()
         {
 
@@ -109,16 +120,31 @@ namespace MyCinema
 
 
 
+        /// <summary>
+        /// Method which opens movie in web-app using default browser
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void viewItem_viewOnlineBtn_Click(object sender, EventArgs e)
         {
             Process.Start("http://13.53.159.1:8080/view-movie?id=" + movie.Id);
         }
 
+        /// <summary>
+        /// Method which opens AddMovieForm using this movie to populate fields in that form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void viewItem_editBtn_Click(object sender, EventArgs e)
         {
             setMainForm(new AddMovieForm(movie));
         }
 
+        /// <summary>
+        /// Method which sends request to delete movie in database
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void viewItem_removeBtn_Click(object sender, EventArgs e)
         {
             MongoClient mongoClient = new MongoClient("mongodb://W60113:asd123@13.53.159.1:27017");
@@ -130,6 +156,10 @@ namespace MyCinema
             setMainForm(new Form2(MainPanel));
         }
 
+        /// <summary>
+        /// Method used to fill right panel of main form
+        /// </summary>
+        /// <param name="passedForm"></param>
         private void setMainForm(Form passedForm)
         {
 

@@ -17,11 +17,17 @@ namespace MyCinema
 
         public static Form activeForm = null;
 
+        /// <summary>
+        ///  Default form constructor
+        /// </summary>
         public Form1()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        ///  Method used to initialize components in form
+        /// </summary>
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
@@ -196,12 +202,21 @@ namespace MyCinema
 
         }
 
+        /// <summary>
+        /// Method which fills right panel with list of all movies from database
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void sidePanel_viewMoviesBtn_Click(object sender, EventArgs e)
         {
             setMainForm(new Form2(mainPanel));
             setActiveButton(Utils.ButtonNames.ViewMovies);
         }
 
+        /// <summary>
+        ///  Sets right panel of main form to passed form
+        /// </summary>
+        /// <param name="passedForm">Passing form</param>
         public void setMainForm(Form passedForm)
         {
 
@@ -225,6 +240,11 @@ namespace MyCinema
 
         }
 
+        /// <summary>
+        /// Method which fills right panel with AddMovie form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void sidePanel_addMovieBtn_Click(object sender, EventArgs e)
         {
             setMainForm(new AddMovieForm());
@@ -232,18 +252,31 @@ namespace MyCinema
 
         }
 
+        /// <summary>
+        /// Method which opens web-app in default browser
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void sidePanel_viewOnline_Click(object sender, EventArgs e)
         {
             Process.Start("http://13.53.159.1:8080");
         }
 
+        /// <summary>
+        /// Method displaying information about author
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void sidePanel_aboutUsBtn_Click(object sender, EventArgs e)
         {
             setMainForm(new AboutUsForm());
             setActiveButton(Utils.ButtonNames.AboutUs);
         }
 
-
+        /// <summary>
+        ///  Sets active button on left panel of main form
+        /// </summary>
+        /// <param name="buttonName">Button name</param>
         private void setActiveButton(Utils.ButtonNames buttonName)
         {
 
@@ -272,6 +305,11 @@ namespace MyCinema
             }
         }
 
+        /// <summary>
+        ///  Quits application
+        /// </summary>
+        /// <param name="sender">Sender</param>
+        /// <param name="e">Event Arguments</param>
         private void sidePanel_exitApp_Click(object sender, EventArgs e)
         {
             this.Close();

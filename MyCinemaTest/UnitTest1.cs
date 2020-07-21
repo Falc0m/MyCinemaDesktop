@@ -10,6 +10,9 @@ namespace MyCinemaTest
     [TestClass]
     public class UnitTest1
     {
+        /// <summary>
+        /// Test method testing fetching documents from database
+        /// </summary>
         [TestMethod]
         public void Test_DatabaseConnection()
         {
@@ -19,6 +22,9 @@ namespace MyCinemaTest
             Assert.AreNotEqual(movieList, null);
         }
 
+        /// <summary>
+        /// Test method testing inserting documents into database
+        /// </summary>
         [TestMethod]
         public void Test_DatabaseInsertion()
         {

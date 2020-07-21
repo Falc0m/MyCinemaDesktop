@@ -15,6 +15,9 @@ namespace MyCinema
         private static IMongoDatabase db = mongoClient.GetDatabase("my_cinema");
         private static IMongoCollection<Movie> collection = db.GetCollection<Movie>("movies");
 
+        /// <summary>
+        /// Enum with names of our buttons from main panel
+        /// </summary>
         public enum ButtonNames
         {
             None,
@@ -24,12 +27,17 @@ namespace MyCinema
             AboutUs
         }
 
-
+        /// <summary>
+        /// Method returning all documents from database
+        /// </summary>
         public static List<Movie> AllDocumentsToList()
         {
             return collection.AsQueryable().ToList<Movie>();
         }
 
+        /// <summary>
+        /// Method inserting document in database
+        /// </summary>
         public static bool InsertDocument(Movie movie)
         {
 

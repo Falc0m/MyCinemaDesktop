@@ -8,9 +8,23 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace MyCinema
 {
+
+    /// <summary>
+    ///  Model class used in our application
+    /// </summary>
     [BsonIgnoreExtraElements]
     public class Movie
     {
+
+        /// <summary>
+        /// Model constructor used for making instances of this class
+        /// </summary>
+        /// <param name="title"></param>
+        /// <param name="category"></param>
+        /// <param name="rating"></param>
+        /// <param name="description"></param>
+        /// <param name="dateAdded"></param>
+        /// <param name="premiereDate"></param>
         public Movie(string title, string category, int rating, string description, DateTime dateAdded,DateTime premiereDate)
         {
             Title = title;
@@ -21,9 +35,10 @@ namespace MyCinema
             PremiereDate = premiereDate;
         }
 
-        public Movie()
-        {
-        }
+        /// <summary>
+        /// Default model constructor
+        /// </summary>
+        public Movie() {}
 
         [BsonId]
         public ObjectId Id { get; set; }

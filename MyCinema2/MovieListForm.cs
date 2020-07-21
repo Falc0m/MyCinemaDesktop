@@ -17,7 +17,9 @@ namespace MyCinema
         private Panel MainPanel;
 
 
-
+        /// <summary>
+        /// Method used to apply post creation DataGridView changes
+        /// </summary>
         private void ApplyTableChanges()
         {
             // hide ID, Description and premiere date columns as they get automaticaly added but we dont need them
@@ -53,10 +55,10 @@ namespace MyCinema
             dataGridView.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
 
-
-
-
-
+        /// <summary>
+        /// Constructor with MainForm panel as parameter
+        /// </summary>
+        /// <param name="panel"></param>
         public Form2(Panel panel)
         {
             this.MainPanel = panel;
@@ -69,6 +71,11 @@ namespace MyCinema
             ApplyTableChanges();
         }
 
+        /// <summary>
+        /// Method used create detailed view of clicked object
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -91,6 +98,10 @@ namespace MyCinema
         }
 
 
+        /// <summary>
+        /// Method used to fill right panel of main form
+        /// </summary>
+        /// <param name="passedForm"></param>
         private void setMainForm(Form passedForm)
         {
 

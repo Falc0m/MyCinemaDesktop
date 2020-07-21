@@ -12,12 +12,20 @@ namespace MyCinema2
 {
     public partial class AboutUsForm : Form
     {
+        /// <summary>
+        /// Default form contstructor
+        /// </summary>
         public AboutUsForm()
         {
             InitializeComponent();
         }
 
 
+        /// <summary>
+        /// Method opening web-app
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void linkLabel1_LinkClicked(object sender, System.Windows.Forms.LinkLabelLinkClickedEventArgs e)
         {
             this.linkLabel1.LinkVisited = true;

@@ -16,12 +16,18 @@ namespace MyCinema2
     {
         private Movie passedMovie;
 
+        /// <summary>
+        /// Default form constructor
+        /// </summary>
         public AddMovieForm()
         {
             InitializeComponent();
         }
 
-
+        /// <summary>
+        /// Form constructor with movie parameter used to populate fields in our form
+        /// </summary>
+        /// <param name="movie"></param>
         public AddMovieForm(Movie movie)
         {
             passedMovie = movie;
@@ -30,9 +36,11 @@ namespace MyCinema2
             PopulateForm();
         }
 
+        /// <summary>
+        /// Method used to populate fields in our form
+        /// </summary>
         private void PopulateForm()
         {
-
             addMovie_titleTxt.Text = passedMovie.Title;
             addMovie_ratingCmbBox.Text = passedMovie.Rating.ToString();
             addMovie_idTxt.Text = passedMovie.Id.ToString();
@@ -41,6 +49,11 @@ namespace MyCinema2
             addMovie_categoryCmbBox.Text = passedMovie.Category.ToString();
         }
 
+        /// <summary>
+        /// Method used to validate input and send request to MongoDB database
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void addMovie_submitBtn_Click(object sender, EventArgs e)
         {
             MongoClient mongoClient = new MongoClient("mongodb://W60113:asd123@13.53.159.1:27017");
