@@ -1,6 +1,6 @@
 ﻿using MyCinema;
 
-namespace MyCinema2
+namespace MyCinema
 {
     partial class AddMovieForm
     {

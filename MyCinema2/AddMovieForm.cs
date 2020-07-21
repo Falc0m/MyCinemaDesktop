@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MyCinema2
+namespace MyCinema
 {
     public partial class AddMovieForm : Form
     {

@@ -1,4 +1,4 @@
-﻿using MyCinema2;
+﻿using MyCinema;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MyCinema;
-using MyCinema2;
 
 namespace MyCinemaTest
 {

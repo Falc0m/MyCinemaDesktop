@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MyCinema2.Properties
+namespace MyCinema.Properties
 {
 
 
